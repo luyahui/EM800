@@ -101,12 +101,12 @@ if __name__ == '__main__':
 
     articles = getArticles('apple')
     for article in articles:
-        file_dir = 'Zerohedge/{}.txt'.format(article['date'].strftime('%Y%m%d'))
+        file_dir = 'Zerohedge/Article/{}.txt'.format(article['date'].strftime('%Y%m%d'))
         with open(file_dir, 'a') as f:
             f.write(article['title'] + '\n')
             f.write(article['content'] + '\n')
         for comment in article['comments']:
-            file_dir = 'Zerohedge/{}.txt'.format(comment['date'].strftime('%Y%m%d'))
+            file_dir = 'Zerohedge/Comment/{}.txt'.format(comment['date'].strftime('%Y%m%d'))
             with open(file_dir, 'a') as f:
                 f.write(comment['content'] + '\n')
 
